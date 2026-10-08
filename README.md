@@ -1,21 +1,21 @@
 # LeetCode Solutions
 
-Мої розв'язки задач з [LeetCode](https://leetcode.com/) на Python. Для частини задач є кілька рішень, щоб порівняти підходи: наївний перебір, математичний спосіб, оптимізація. У коментарях на початку кожного рішення вказано дату, час виконання та використану пам'ять з LeetCode.
+My solutions to [LeetCode](https://leetcode.com/) problems in Python. For some problems there are several solutions so that the approaches can be compared: brute force, a mathematical method, optimization. The comment at the start of each solution gives the date, runtime, and memory usage reported by LeetCode.
 
-## Задачі
+## Problems
 
-| # | Задача | Складність | Підхід | Складність алгоритму | Файл |
+| # | Problem | Difficulty | Approach | Algorithm complexity | File |
 |---|---|---|---|---|---|
-| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | Easy | хеш-таблиця: для кожного числа шукаємо `target - num` серед уже побачених | O(n) час, O(n) пам'ять | [two_sum](easy/0001_two_sum.py) |
-| 9 | [Palindrome Number](https://leetcode.com/problems/palindrome-number/) | Easy | 1) порівняння рядка з його розворотом; 2) математичний розворот числа без рядків | O(log x) час, у другому рішенні O(1) пам'ять | [palindrome_number](easy/0009_palindrome_number.py) |
-| 3354 | [Make Array Elements Equal to Zero](https://leetcode.com/problems/make-array-elements-equal-to-zero/) | Easy | 1) повна симуляція для кожної стартової позиції; 2) префіксні суми: порівнюємо суму зліва й справа від кожного нуля | рішення 2: O(n) час, O(1) пам'ять | [make_array_elements_equal_to_zero](easy/3354_make_array_elements_equal_to_zero.py) |
-| 2 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | Medium | 1) додавання по розрядах з перенесенням; 2) перетворення списків у числа, додавання й побудова нового списку | рішення 1: O(max(m, n)) час | [add_two_numbers](medium/0002_add_two_numbers.py) |
+| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | Easy | hash table: for each number, look for `target - num` among the numbers already seen | O(n) time, O(n) space | [two_sum](easy/0001_two_sum.py) |
+| 9 | [Palindrome Number](https://leetcode.com/problems/palindrome-number/) | Easy | 1) compare the string with its reverse; 2) mathematical reversal of the number without strings | O(log x) time, O(1) space in the second solution | [palindrome_number](easy/0009_palindrome_number.py) |
+| 3354 | [Make Array Elements Equal to Zero](https://leetcode.com/problems/make-array-elements-equal-to-zero/) | Easy | 1) full simulation for each starting position; 2) prefix sums: compare the sum to the left and to the right of each zero | solution 2: O(n) time, O(1) space | [make_array_elements_equal_to_zero](easy/3354_make_array_elements_equal_to_zero.py) |
+| 2 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | Medium | 1) digit-by-digit addition with carry; 2) convert the lists to numbers, add them, and build a new list | solution 1: O(max(m, n)) time | [add_two_numbers](medium/0002_add_two_numbers.py) |
 
-## Приклад оптимізації
+## Optimization Example
 
-Задача **Make Array Elements Equal to Zero**: перше рішення симулює процес для кожної стартової позиції й виконується приблизно **5235 мс**. Друге рішення використовує префіксні суми й виконується приблизно за **54 мс**, тобто майже у 100 разів швидше. Час виконання залежить від навантаження серверів LeetCode, тому наведено значення на момент відправлення.
+The problem **Make Array Elements Equal to Zero**: the first solution simulates the process for each starting position and runs in about **5235 ms**. The second solution uses prefix sums and runs in about **54 ms**, almost 100 times faster. Runtime depends on the load of the LeetCode servers, so the values at the time of submission are given.
 
-## Структура репозиторію
+## Repository Structure
 
 ```
 .
@@ -28,17 +28,17 @@
 └── README.md
 ```
 
-Файли названо за схемою `<номер задачі>_<назва>.py`, папки відповідають складності.
+Files are named using the pattern `<problem number>_<name>.py`, and the folders correspond to difficulty.
 
-## Як запускати рішення
+## How to Run the Solutions
 
-Файли містять код у тому вигляді, в якому його приймає LeetCode, тобто лише клас `Solution`. Типи `List`, `Optional` і `ListNode` на сайті підставляються автоматично. Щоб запустити рішення локально, додай на початок файлу:
+The files contain code in the form that LeetCode accepts, that is, only the `Solution` class. The `List`, `Optional`, and `ListNode` types are supplied automatically on the site. To run a solution locally, add this at the top of the file:
 
 ```python
 from typing import List, Optional
 ```
 
-Для задач зі зв'язаними списками (`Add Two Numbers`) потрібно також описати клас вузла:
+For linked list problems (`Add Two Numbers`), you also need to define the node class:
 
 ```python
 class ListNode:
@@ -47,14 +47,14 @@ class ListNode:
         self.next = next
 ```
 
-Приклад перевірки:
+Example check:
 
 ```python
 print(Solution().twoSum([2, 7, 11, 15], 9))   # [0, 1]
 ```
 
-> Якщо у файлі кілька рішень, вони названі однаково (`Solution`), тому під час локального запуску діє лише останнє. Щоб перевірити окреме рішення, тимчасово закоментуй або перейменуй інші.
+> If a file contains several solutions, they are all named the same (`Solution`), so only the last one takes effect when running locally. To test a particular solution, temporarily comment out or rename the others.
 
-## Автор
+## Author
 
 [SHEV-4](https://github.com/SHEV-4)
